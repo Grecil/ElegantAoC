@@ -42,7 +42,7 @@ while True:
         c = 0
         for i in (0, 1, -1):
             for j in (0, 1, -1):
-                if not (i == 0 and j == 0) and (roll[0] + i, roll[1] + j) in rolls:
+                if not (i == j == 0) and (roll[0] + i, roll[1] + j) in rolls:
                     c += 1
         if c < 4:
             to_rem.add(roll)
