@@ -15,8 +15,7 @@ for i in range(n):
                 for dj in (0, 1, -1):
                     if not di == dj == 0:
                         c += grid[i + di][j + dj] == "@"
-            if c < 4:
-                ans += 1
+            ans += c < 4 
 print(ans)
 
 
