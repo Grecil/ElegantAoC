@@ -15,9 +15,8 @@ while True:
                 c = 0
                 for di in (0, 1, -1):
                     for dj in (0, 1, -1):
-                        if not di == dj == 0:
-                            c += grid[i + di][j + dj] == "@"
-                if c < 4:
+                        c += grid[i + di][j + dj] == "@"
+                if c <= 4:
                     cur += 1
                     grid[i][j] = "."
     if cur == 0:
@@ -42,9 +41,8 @@ while True:
         c = 0
         for i in (0, 1, -1):
             for j in (0, 1, -1):
-                if not (i == j == 0) and (roll[0] + i, roll[1] + j) in rolls:
-                    c += 1
-        if c < 4:
+                c += (roll[0] + i, roll[1] + j) in rolls
+        if c <= 4:
             to_rem.add(roll)
     if to_rem:
         ans += len(to_rem)

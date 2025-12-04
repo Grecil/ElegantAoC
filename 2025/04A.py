@@ -13,9 +13,8 @@ for i in range(n):
             c = 0
             for di in (0, 1, -1):
                 for dj in (0, 1, -1):
-                    if not di == dj == 0:
-                        c += grid[i + di][j + dj] == "@"
-            ans += c < 4 
+                    c += grid[i + di][j + dj] == "@"
+            ans += c <= 4
 print(ans)
 
 
@@ -34,7 +33,6 @@ for roll in rolls:
     c = 0
     for i in (0, 1, -1):
         for j in (0, 1, -1):
-            if not i == j == 0 and (roll[0] + i, roll[1] + j) in rolls:
-                c += 1
-    ans += c < 4
+            c += (roll[0] + i, roll[1] + j) in rolls
+    ans += c <= 4
 print(ans)
