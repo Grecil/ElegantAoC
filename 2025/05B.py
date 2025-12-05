@@ -2,10 +2,10 @@ import sys
 
 ranges, ids = sys.stdin.read().split("\n\n")
 ranges = sorted([*map(int, i.split("-"))] for i in ranges.splitlines())
-st = [ranges[0]]
+stk = [ranges[0]]
 for a, b in ranges[1:]:
-    if a <= st[-1][1]:
-        st[-1][1] = max(st[-1][1], b)
+    if a <= stk[-1][1]:
+        stk[-1][1] = max(stk[-1][1], b)
     else:
-        st.append([a, b])
-print(sum(b - a + 1 for a, b in st))
+        stk.append([a, b])
+print(sum(b - a + 1 for a, b in stk))
