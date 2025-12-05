@@ -8,7 +8,4 @@ for a, b in ranges[1:]:
         st[-1][1] = max(st[-1][1], b)
     else:
         st.append([a, b])
-ans = 0
-for a, b in st:
-    ans += b - a + 1
-print(ans)
+print(sum(b - a + 1 for a, b in st))
