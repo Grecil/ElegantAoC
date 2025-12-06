@@ -1,6 +1,5 @@
 import sys
 from math import prod
-from itertools import accumulate
 
 inp = [i.strip("\n") for i in sys.stdin.readlines()]
 lens = [max(map(len, i)) for i in zip(*[i.split() for i in inp])]
