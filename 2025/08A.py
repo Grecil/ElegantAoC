@@ -1,5 +1,4 @@
 import sys
-from math import prod
 
 
 class DisjointSetUnion:
@@ -50,4 +49,4 @@ for _ in range(1000):
     dsu.union(i, j)
 st = {dsu.find(i) for i in range(n)}
 sizes = sorted(dsu.size[i] for i in st)
-print(prod(sizes[-3:]))
+print(sizes[-3] * sizes[-2] * sizes[-1])
