@@ -14,7 +14,7 @@ y2i = {y: i + 1 for i, y in enumerate(sorted(yst))}
 # Creating the boundary
 lx, ly = len(x2i) + 2, len(y2i) + 2
 grid = [[-1] * ly for i in range(lx)]
-for i in range(len(rects)):
+for i in range(n):
     x1, y1 = x2i[rects[i - 1][0]], y2i[rects[i - 1][1]]
     x2, y2 = x2i[rects[i][0]], y2i[rects[i][1]]
     if x1 == x2:
