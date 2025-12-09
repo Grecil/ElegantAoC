@@ -43,7 +43,6 @@ for i in range(lx):
 # 2D prefix sum to check if a rectangle is completely filled
 pre = [[0] * (ly + 1) for _ in range(lx + 1)]
 for i, row in enumerate(grid):
-    pi, pii = pre[i], pre[i + 1]
     for j in range(ly):
         pre[i + 1][j + 1] = row[j] + pre[i][j + 1] + pre[i + 1][j] - pre[i][j]
 csum = lambda a, b, x, y: pre[x][y] - pre[x][b] - pre[a][y] + pre[a][b]
