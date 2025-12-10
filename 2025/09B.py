@@ -6,13 +6,13 @@ n = len(rects)
 # Coordinate Compression
 xst, yst = set(), set()
 for x, y in rects:
-    xst.add(x)
-    yst.add(y)
-x2i = {x: i + 1 for i, x in enumerate(sorted(xst))}
-y2i = {y: i + 1 for i, y in enumerate(sorted(yst))}
+    xst.update([x - 1, x, x + 1])
+    yst.update([y - 1, y, y + 1])
+x2i = {x: i for i, x in enumerate(sorted(xst))}
+y2i = {y: i for i, y in enumerate(sorted(yst))}
 
 # Creating the boundary
-lx, ly = len(x2i) + 2, len(y2i) + 2
+lx, ly = len(x2i), len(y2i)
 grid = [[-1] * ly for i in range(lx)]
 for i in range(n):
     x1, y1 = x2i[rects[i - 1][0]], y2i[rects[i - 1][1]]
